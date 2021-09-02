@@ -34,7 +34,7 @@ buildNumber=`git rev-list --count HEAD`
 labelTag="v${marketingVersion}(${buildNumber})"
 marketingShort=`echo $marketingVersion | awk -F'.' '{print $1 "." $2}'`
 
-jql="project=RFMI and status=Merged and (fixVersion=${marketingVersion} or (fixVersion=null and Sprint=\"iOS Version ${marketingShort}\"))"
+jql="project=RFMI and status=Merged and (fixVersion=${marketingVersion} or (fixVersion=null and Sprint=\"iOS Version ${marketingVersion}\"))"
 
 # download gojira
 curl -LO https://github.com/junkpiano/gojira/releases/download/${GOJIRA_VERSION}/gojira-darwin-amd64.zip
